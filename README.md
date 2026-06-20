@@ -6,7 +6,7 @@
 ---
 
 ## 🎯 Project Overview
-This project is a Hackathon submission for the **Business Agent Track**. It demonstrates how to transition AI agents from unreliable, monolithic chat scripts into a robust **Distributed Agent-to-Agent (A2A) Microservice Architecture**. 
+This project is a Kaggle hackathon submission for the **Business Agent Track**. It demonstrates how to transition AI agents from unreliable, monolithic chat scripts into a robust **Distributed Agent-to-Agent (A2A) Microservice Architecture**. 
 
 By decentralizing tasks into isolated FastAPI microservices, the system automates retail inventory analysis, negotiates wholesale purchase orders using external MCP tools, and enforces strict financial budgets through an intelligent looping guardrail.
 
