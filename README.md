@@ -1,7 +1,8 @@
 # Smart Retail B2B Procurement Guardrail
 ## Enterprise-Grade Distributed Multi-Agent Architecture with Financial Guardrails
 
-**Live Deployment URL:** [https://neko-agent.onrender.com](https://neko-agent.onrender.com)
+[![Render Deployment](https://img.shields.io/badge/Deployment-Render-purple.svg)](https://neko-agent.onrender.com)
+[![Framework](https://img.shields.io/badge/Framework-Google%20ADK%202.0-blue.svg)](https://github.com/google/adk)
 
 ---
 
