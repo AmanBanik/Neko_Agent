@@ -6,6 +6,14 @@ from google.adk.agents import LlmAgent
 
 app = FastAPI(title="Capital Guardrail Service")
 
+@app.get("/")
+def read_root():
+    return {
+        "status": "online", 
+        "service": "Capital Guardrail Service", 
+        "architecture": "Distributed A2A Network"
+    }
+
 capital_guardrail = LlmAgent(
     name="CapitalGuardrail",
     model="gemini-3.1-flash-lite",

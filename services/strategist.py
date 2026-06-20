@@ -7,6 +7,14 @@ from google.adk.agents import LlmAgent
 
 app = FastAPI(title="Procurement Strategist Service")
 
+@app.get("/")
+def read_root():
+    return {
+        "status": "online", 
+        "service": "Procurement Strategist Service", 
+        "architecture": "Distributed A2A Network"
+    }
+
 procurement_strategist = LlmAgent(
     name="ProcurementStrategist",
     model="gemini-3.1-flash-lite",

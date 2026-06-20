@@ -7,6 +7,14 @@ from google.adk.agents import LlmAgent
 
 app = FastAPI(title="Sales Analyst Service")
 
+@app.get("/")
+def read_root():
+    return {
+        "status": "online", 
+        "service": "Sales Analyst Service", 
+        "architecture": "Distributed A2A Network"
+    }
+
 sales_analyst = LlmAgent(
     name="SalesAnalyst",
     model="gemini-3.1-flash-lite",

@@ -6,7 +6,15 @@ import httpx
 import os
 from google.adk.agents import LlmAgent
 
-app = FastAPI(title="EDA Data Science Service")
+app = FastAPI(title="EDA Agent Service")
+
+@app.get("/")
+def read_root():
+    return {
+        "status": "online", 
+        "service": "EDA Agent Service", 
+        "architecture": "Distributed A2A Network"
+    }
 
 def convert_xlsx_to_csv(filepath: str) -> str:
     """
