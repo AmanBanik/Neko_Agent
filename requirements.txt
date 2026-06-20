@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+httpx
+google-adk
+google-genai
+fastmcp
+pandas
+plotly
+python-dotenv
+psycopg2-binary
