@@ -14,15 +14,24 @@ def run_procurement():
     """
     print("Initiating Distributed A2A Procurement Pipeline...")
     
+    # initial_payload = {
+    #     "session_id": "demo-session-123",
+    #     "history": [],
+    #     "context": {
+    #         "gdrive_file_name": "Q3_Regional_Sales.xlsx"
+    #     }
+    # }
+    
     initial_payload = {
-        "session_id": "demo-session-123",
+        "session_id": "demo-session-999",
         "history": [],
         "context": {
-            "gdrive_file_name": "Q3_Regional_Sales.xlsx"
+            "file_reference": "C:/Devfield/New_proj/demo_data/Q3_Regional_Sales.xlsx"
         }
-    }
-    
+     }
     import os
+    from dotenv import load_dotenv
+    load_dotenv()
     eda_url = os.environ.get("EDA_URL", "http://localhost:7999")
     
     # Send request to the very first microservice (EDA Agent)
