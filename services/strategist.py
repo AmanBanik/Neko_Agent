@@ -66,7 +66,7 @@ async def strategize(payload: RequestPayload):
             response = await client.post(
                 f"{guardrail_url}/validate", 
                 json=payload.model_dump(),
-                timeout=30.0
+                timeout=120.0
             )
         
         result = response.json()

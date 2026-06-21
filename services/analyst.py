@@ -72,7 +72,7 @@ async def analyze(payload: RequestPayload):
         response = await client.post(
             f"{strategist_url}/strategize", 
             json=payload.model_dump(),
-            timeout=30.0
+            timeout=120.0
         )
     return response.json()
 

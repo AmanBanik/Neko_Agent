@@ -22,13 +22,22 @@ def run_procurement():
     #     }
     # }
     
+    # initial_payload = {
+    #     "session_id": "demo-session-999",
+    #     "history": [],
+    #     "context": {
+    #         "file_reference": "C:/Devfield/New_proj/demo_data/Q3_Regional_Sales.xlsx"
+    #     }
+    #  }
+
     initial_payload = {
-        "session_id": "demo-session-999",
-        "history": [],
-        "context": {
-            "file_reference": "C:/Devfield/New_proj/demo_data/Q3_Regional_Sales.xlsx"
+            "session_id": "demo-session-999",
+            "history": [],
+            "context": {
+                "gdrive_url": "https://docs.google.com/spreadsheets/d/1IYVhNnII_AFL1x8J_WPHXYfIk31r4Fdd/edit?usp=sharing&ouid=109423889667513747899&rtpof=true&sd=true" # just for testing
+            }
         }
-     }
+
     import os
     from dotenv import load_dotenv
     load_dotenv()
@@ -38,7 +47,7 @@ def run_procurement():
     with httpx.Client() as client:
         try:
             print(f"Client -> Sending raw data references to EDA Agent at {eda_url}...")
-            response = client.post(f"{eda_url}/eda", json=initial_payload, timeout=30.0)
+            response = client.post(f"{eda_url}/eda", json=initial_payload, timeout=120.0)
             result = response.json()
             
             print("\n==================================")
