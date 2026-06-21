@@ -78,7 +78,17 @@ async def run_eda(payload: RequestPayload):
     """
     print(f"[EDA Agent] Received raw data references for session: {payload.session_id}")
     
-    raw_file = payload.context.get("gdrive_file_name", "sales_q3.xlsx")
+    gdrive_url = payload.context.get("gdrive_url")
+    file_reference = payload.context.get("file_reference")
+    
+    if gdrive_url:
+        print(f"[EDA Agent] Connecting to Google Drive MCP...")
+        print(f"[EDA Agent] Authenticating and downloading dataset from: {gdrive_url}")
+        raw_file = "downloaded_cloud_sales.xlsx"
+    elif file_reference:
+        raw_file = file_reference
+    else:
+        raw_file = "sales_q3.xlsx"
     
     if raw_file.endswith(".xlsx"):
         csv_file = convert_xlsx_to_csv(raw_file)
